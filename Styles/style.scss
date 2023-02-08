@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Futura;
+}
+
+@font-face {
+  font-family: Futura;
+  font-weight: 100;
+  src: url(../Fonts/SFUFuturaLight.TTF);
+}
+@font-face {
+  font-family: Futura;
+  font-weight: 300;
+  src: url(../Fonts/SFUFuturaBook.TTF);
+}
+
+@font-face {
+  font-family: Futura;
+  font-weight: 400;
+  src: url(../Fonts/SFUFuturaRegular.TTF);
+}
+@font-face {
+  font-family: Futura;
+  font-weight: 800;
+  src: url(../Fonts/SFUFuturaBold.TTF);
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+.Container {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  height: 90vh;
+  flex-direction: column;
+  background: #e9e7e7;
+
+  color: #353535;
+
+  h1 {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+    font-weight: 800;
+  }
+}
