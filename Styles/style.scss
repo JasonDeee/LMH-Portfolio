@@ -87,28 +87,28 @@ iframe {
   }
 }
 
-.isMobile {
-  .DropDown_Container {
-    height: 32px;
-    right: 56px;
-    top: 10px;
-  }
-  .DropDown {
-    button {
-      height: 32px;
-      font-size: 1rem;
-    }
+// .isMobile {
+//   .DropDown_Container {
+//     height: 32px;
+//     right: 56px;
+//     top: 10px;
+//   }
+//   .DropDown {
+//     button {
+//       height: 32px;
+//       font-size: 1rem;
+//     }
 
-    button:hover {
-      background: #ffffff56;
-      cursor: pointer;
-    }
-  }
-  .LoadingStatus {
-    height: 32px;
-    width: 40px;
-  }
-  .DropDown_Container:hover {
-    height: 64px;
-  }
-}
+//     button:hover {
+//       background: #ffffff56;
+//       cursor: pointer;
+//     }
+//   }
+//   .LoadingStatus {
+//     height: 32px;
+//     width: 40px;
+//   }
+//   .DropDown_Container:hover {
+//     height: 64px;
+//   }
+// }
