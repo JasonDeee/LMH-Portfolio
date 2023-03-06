@@ -1,54 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: Futura;
-}
-
-@font-face {
-  font-family: Futura;
-  font-weight: 100;
-  src: url(../Fonts/SFUFuturaLight.TTF);
-}
-@font-face {
-  font-family: Futura;
-  font-weight: 300;
-  src: url(../Fonts/SFUFuturaBook.TTF);
-}
-
-@font-face {
-  font-family: Futura;
-  font-weight: 400;
-  src: url(../Fonts/SFUFuturaRegular.TTF);
-}
-@font-face {
-  font-family: Futura;
-  font-weight: 800;
-  src: url(../Fonts/SFUFuturaBold.TTF);
+  font-family: "Lexend", sans-serif;
 }
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
   height: 100vh;
+  width: 100vw;
 }
-.Container {
+iframe {
+  height: 100vh;
+  width: 100vw;
+  border: none;
+  outline: none;
+}
+
+.LoadingStatus {
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  top: 12px;
+  right: 178px;
+  left: auto;
+  transition: all 0.8s cubic-bezier(0.25, 0, 0, 1);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.Loading_Active {
+  opacity: 1;
+}
+
+.DropDown_Container {
+  position: fixed;
+  width: 104px;
+  height: 40px;
+  overflow: hidden;
+  top: 12px;
+  right: 64px;
+  left: auto;
+
+  transition: all 0.8s cubic-bezier(0.25, 0, 0, 1);
+
   display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  width: 90vw;
-  height: 90vh;
   flex-direction: column;
-  background: #e9e7e7;
+  align-items: flex-start;
+}
 
-  color: #353535;
+.En_Active {
+  justify-content: flex-start;
+}
+.Vi_Active {
+  justify-content: flex-end;
+}
+.DropDown_Container:hover {
+  height: 80px;
+}
+.DropDown {
+  width: 100%;
+  height: auto;
 
-  h1 {
-    font-size: 2.2rem;
-    margin-bottom: 12px;
-    font-weight: 800;
+  background: rgba(0, 0, 0, 0.75);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: start;
+
+  button {
+    height: 40px;
+    width: 100%;
+    display: block;
+    background: none;
+    color: white;
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+    transition: all 0.8s cubic-bezier(0.25, 0, 0, 1);
+  }
+
+  button:hover {
+    background: #ffffff56;
+    cursor: pointer;
   }
 }

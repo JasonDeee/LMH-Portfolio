@@ -1,77 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: Futura;
-}
-
-@font-face {
-  font-family: Futura;
-  font-weight: 100;
-  src: url(../Fonts/SFUFuturaLight.TTF);
-}
-
-@font-face {
-  font-family: Futura;
-  font-weight: 300;
-  src: url(../Fonts/SFUFuturaBook.TTF);
-}
-
-@font-face {
-  font-family: Futura;
-  font-weight: 400;
-  src: url(../Fonts/SFUFuturaRegular.TTF);
-}
-
-@font-face {
-  font-family: Futura;
-  font-weight: 800;
-  src: url(../Fonts/SFUFuturaBold.TTF);
+  font-family: "Lexend", sans-serif;
 }
 
 body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 100vw;
   height: 100vh;
+  width: 100vw;
 }
 
-.Container {
+iframe {
+  height: 100vh;
+  width: 100vw;
+  border: none;
+  outline: none;
+}
+
+.LoadingStatus {
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  top: 12px;
+  right: 178px;
+  left: auto;
+  -webkit-transition: all 0.8s cubic-bezier(0.25, 0, 0, 1);
+  transition: all 0.8s cubic-bezier(0.25, 0, 0, 1);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.Loading_Active {
+  opacity: 1;
+}
+
+.DropDown_Container {
+  position: fixed;
+  width: 104px;
+  height: 40px;
+  overflow: hidden;
+  top: 12px;
+  right: 64px;
+  left: auto;
+  -webkit-transition: all 0.8s cubic-bezier(0.25, 0, 0, 1);
+  transition: all 0.8s cubic-bezier(0.25, 0, 0, 1);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 90vw;
-  height: 90vh;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: #e9e7e7;
-  color: #353535;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
-.Container h1 {
-  font-size: 2.2rem;
-  margin-bottom: 12px;
-  font-weight: 800;
+.En_Active {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.Vi_Active {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.DropDown_Container:hover {
+  height: 80px;
+}
+
+.DropDown {
+  width: 100%;
+  height: auto;
+  background: rgba(0, 0, 0, 0.75);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.DropDown button {
+  height: 40px;
+  width: 100%;
+  display: block;
+  background: none;
+  color: white;
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+  -webkit-transition: all 0.8s cubic-bezier(0.25, 0, 0, 1);
+  transition: all 0.8s cubic-bezier(0.25, 0, 0, 1);
+}
+
+.DropDown button:hover {
+  background: #ffffff56;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

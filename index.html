@@ -20,29 +20,121 @@
     <meta name="revisit-after" content="3 days" />
     <meta name="author" content="Le Minh Hieu" />
 
+    <link rel="stylesheet" href="./Styles/style.css" />
+
     <title>Lê Minh Hiếu | Marketer's Portfolio 2023</title>
-    <style>
-      * {
-        box-sizing: border-box;
-        padding: 0;
-        margin: 0;
-      }
-      body {
-        height: 100vh;
-        width: 100vw;
-      }
-      iframe {
-        height: 100vh;
-        width: 100vw;
-        border: none;
-        outline: none;
-      }
-    </style>
   </head>
   <body>
     <iframe
-      src="https://drive.google.com/file/d/17yKnbI_jH_oqnFoZqhkCz8-r0dIkN_b2/preview"
+      src="https://drive.google.com/file/d/1NfciBJ5erSLxA-JkfMyl3T3jga7eVnT1/preview"
       allow="autoplay"
+      id="TheFrame"
     ></iframe>
+    <div class="LoadingStatus">
+      <svg
+        width="100%"
+        height="100%"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1200 1200"
+      >
+        <defs>
+          <style>
+            .LoadCircleSVG-1 {
+              stroke: #e9e7e7;
+              stroke-width: 86px;
+            }
+
+            .LoadCircleSVG-1,
+            .LoadCircleSVG-2 {
+              fill: none;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+            }
+
+            @keyframes LoadCircleRotating {
+              0% {
+                transform: rotate(0);
+              }
+
+              100% {
+                transform: rotate(360deg);
+              }
+            }
+
+            @keyframes LoadCircleStretch {
+              0% {
+                stroke-dasharray: 1012px;
+              }
+
+              100% {
+                stroke-dasharray: 1512px;
+              }
+            }
+
+            .LoadCircleSVG-2 {
+              stroke: #353535;
+              stroke-width: 68px;
+              stroke-dasharray: 1512px;
+              stroke-dashoffset: 50px;
+              animation: LoadCircleRotating 3s linear infinite,
+                LoadCircleStretch 5s cubic-bezier(0.25, 0, 0, 1)
+                  alternate-reverse infinite;
+              transform-origin: center center;
+            }
+          </style>
+        </defs>
+        <circle class="LoadCircleSVG-1" cx="600" cy="600" r="453.5"></circle>
+        <circle class="LoadCircleSVG-2" cx="600" cy="600" r="453.5"></circle>
+      </svg>
+    </div>
+    <div class="DropDown_Container En_Active">
+      <div class="DropDown">
+        <button id="En">En</button>
+        <button id="Vi">Vi</button>
+      </div>
+    </div>
   </body>
+  <script>
+    //
+    const EnButton = document.getElementById("En");
+    const ViButton = document.getElementById("Vi");
+    const DropDown_Container = document.querySelector(".DropDown_Container");
+    const LoadingStatus = document.querySelector(".LoadingStatus");
+
+    const Framer = document.getElementById("TheFrame");
+
+    const EnVerURL =
+      "https://drive.google.com/file/d/1NfciBJ5erSLxA-JkfMyl3T3jga7eVnT1/preview";
+
+    const ViVerURL =
+      "https://drive.google.com/file/d/17yKnbI_jH_oqnFoZqhkCz8-r0dIkN_b2/preview";
+
+    var Timer = null;
+    //
+    ViButton.addEventListener("click", () => {
+      //
+      DropDown_Container.classList.remove("En_Active");
+      DropDown_Container.classList.add("Vi_Active");
+
+      LoadingStatus.classList.add("Loading_Active");
+      clearTimeout(Timer);
+      Timer = window.setTimeout(() => {
+        LoadingStatus.classList.remove("Loading_Active");
+      }, 3000);
+
+      Framer.src = ViVerURL;
+    });
+    EnButton.addEventListener("click", () => {
+      //
+      DropDown_Container.classList.remove("Vi_Active");
+      DropDown_Container.classList.add("En_Active");
+      Framer.src = EnVerURL;
+
+      LoadingStatus.classList.add("Loading_Active");
+      clearTimeout(Timer);
+      Timer = window.setTimeout(() => {
+        LoadingStatus.classList.remove("Loading_Active");
+      }, 3000);
+    });
+  </script>
 </html>
