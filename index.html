@@ -25,6 +25,16 @@
     <title>Lê Minh Hiếu | Marketer's Portfolio 2023</title>
   </head>
   <body>
+    <script>
+      const isMobile = /iPhone|iPad|iPod|Windows Phone|Android/i.test(
+        navigator.userAgent
+      );
+
+      if (isMobile) {
+        document.body.classList.add("isMobile");
+      }
+    </script>
+
     <iframe
       src="https://drive.google.com/file/d/1NfciBJ5erSLxA-JkfMyl3T3jga7eVnT1/preview"
       allow="autoplay"
