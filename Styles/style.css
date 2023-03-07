@@ -24,7 +24,7 @@ iframe {
   width: 40px;
   position: fixed;
   top: 12px;
-  right: 178px;
+  right: 212px;
   left: auto;
   -webkit-transition: all 0.8s cubic-bezier(0.25, 0, 0, 1);
   transition: all 0.8s cubic-bezier(0.25, 0, 0, 1);
@@ -38,7 +38,7 @@ iframe {
 
 .DropDown_Container {
   position: fixed;
-  width: 104px;
+  width: 136px;
   height: 40px;
   overflow: hidden;
   top: 12px;
@@ -64,14 +64,20 @@ iframe {
           justify-content: flex-start;
 }
 
+.En_Active #En {
+  background: white;
+  color: #353535;
+}
+
 .Vi_Active {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
 
-.DropDown_Container:hover {
-  height: 80px;
+.Vi_Active #Vi {
+  background: white;
+  color: #353535;
 }
 
 .DropDown {
@@ -81,10 +87,10 @@ iframe {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -95,7 +101,7 @@ iframe {
 
 .DropDown button {
   height: 40px;
-  width: 100%;
+  width: 50%;
   display: block;
   background: none;
   color: white;
