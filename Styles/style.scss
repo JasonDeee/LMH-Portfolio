@@ -29,6 +29,7 @@ iframe {
 .Frame_Container {
   width: 32vw;
   height: 96vh;
+  min-width: 640px;
 
   // border: 4px solid #e9e7e7;
   box-shadow: 4px 4px 16px #00000056;
@@ -45,16 +46,32 @@ iframe {
 .isMobile {
   .Frame_Container {
     width: 100vw !important;
-    border-radius: none !important;
+    border-radius: 0 !important;
     padding: 0 !important;
+    min-width: unset !important;
+    height: 100vh !important;
+  }
+  .DropDown_Container {
+    height: 32px !important;
+    width: 96px !important;
+    top: 64px;
+    button {
+      font-size: 0.8rem !important;
+    }
+  }
+  .LoadingStatus {
+    height: 32px !important;
+    width: 32px !important;
+    top: 64px !important;
+    right: 128px !important;
   }
 }
 .LoadingStatus {
   height: 40px;
   width: 40px;
   position: fixed;
-  top: 12px;
-  right: 212px;
+  top: 2vh;
+  right: calc(2vw + 178px);
   left: auto;
   transition: all 0.8s cubic-bezier(0.25, 0, 0, 1);
   pointer-events: none;
@@ -67,33 +84,60 @@ iframe {
 
 .DropDown_Container {
   position: fixed;
-  width: 136px;
-  height: 40px;
+  width: 164px;
+  height: 64px;
   overflow: hidden;
   top: 2vh;
-  right: 14vw;
+  right: 2vw;
   left: auto;
   border-radius: 32px;
+  //border: 4px solid #204c40;
+
+  // outline-width: 4px;
+  // outline: #204c40;
+  background: #e9e7e7;
+  color: #151515;
+
+  // box-shadow: 4px 4px 16px #00000056;
 
   transition: all 0.8s cubic-bezier(0.25, 0, 0, 1);
 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+  &::before {
+    display: block;
+    content: "";
+    border-radius: 32px;
+    background: #239576;
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    transition: all 1.33s cubic-bezier(0.25, 0, 0, 1);
+  }
 }
 
 .En_Active {
   justify-content: flex-start;
+
+  &::before {
+    left: 50%;
+    right: 0;
+  }
+
   #En {
-    background: white;
-    color: #353535;
+    color: white;
   }
 }
 .Vi_Active {
-  justify-content: flex-end;
+  &::before {
+    left: 0;
+    right: 50%;
+  }
   #Vi {
-    background: white;
-    color: #353535;
+    color: white;
   }
 }
 // .DropDown_Container:hover {
@@ -101,21 +145,23 @@ iframe {
 // }
 .DropDown {
   width: 100%;
-  height: auto;
+  height: 100%;
 
-  background: rgba(0, 0, 0, 0.75);
+  background: none;
 
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: start;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
 
   button {
     height: 40px;
     width: 50%;
     display: block;
     background: none;
-    color: white;
     font-size: 1.2rem;
     outline: none;
     border: none;
@@ -123,7 +169,7 @@ iframe {
   }
 
   button:hover {
-    background: #ffffff56;
+    // background: #ffffff56;
     cursor: pointer;
   }
 }

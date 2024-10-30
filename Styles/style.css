@@ -37,6 +37,7 @@ iframe::-webkit-scrollbar {
 .Frame_Container {
   width: 32vw;
   height: 96vh;
+  min-width: 640px;
   -webkit-box-shadow: 4px 4px 16px #00000056;
           box-shadow: 4px 4px 16px #00000056;
   background: #151515;
@@ -56,16 +57,35 @@ iframe::-webkit-scrollbar {
 
 .isMobile .Frame_Container {
   width: 100vw !important;
-  border-radius: none !important;
+  border-radius: 0 !important;
   padding: 0 !important;
+  min-width: unset !important;
+  height: 100vh !important;
+}
+
+.isMobile .DropDown_Container {
+  height: 32px !important;
+  width: 96px !important;
+  top: 64px;
+}
+
+.isMobile .DropDown_Container button {
+  font-size: 0.8rem !important;
+}
+
+.isMobile .LoadingStatus {
+  height: 32px !important;
+  width: 32px !important;
+  top: 64px !important;
+  right: 128px !important;
 }
 
 .LoadingStatus {
   height: 40px;
   width: 40px;
   position: fixed;
-  top: 12px;
-  right: 212px;
+  top: 2vh;
+  right: calc(2vw + 178px);
   left: auto;
   -webkit-transition: all 0.8s cubic-bezier(0.25, 0, 0, 1);
   transition: all 0.8s cubic-bezier(0.25, 0, 0, 1);
@@ -79,13 +99,15 @@ iframe::-webkit-scrollbar {
 
 .DropDown_Container {
   position: fixed;
-  width: 136px;
-  height: 40px;
+  width: 164px;
+  height: 64px;
   overflow: hidden;
   top: 2vh;
-  right: 14vw;
+  right: 2vw;
   left: auto;
   border-radius: 32px;
+  background: #e9e7e7;
+  color: #151515;
   -webkit-transition: all 0.8s cubic-bezier(0.25, 0, 0, 1);
   transition: all 0.8s cubic-bezier(0.25, 0, 0, 1);
   display: -webkit-box;
@@ -100,32 +122,47 @@ iframe::-webkit-scrollbar {
           align-items: flex-start;
 }
 
+.DropDown_Container::before {
+  display: block;
+  content: "";
+  border-radius: 32px;
+  background: #239576;
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  top: 0;
+  -webkit-transition: all 1.33s cubic-bezier(0.25, 0, 0, 1);
+  transition: all 1.33s cubic-bezier(0.25, 0, 0, 1);
+}
+
 .En_Active {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
 }
 
-.En_Active #En {
-  background: white;
-  color: #353535;
+.En_Active::before {
+  left: 50%;
+  right: 0;
 }
 
-.Vi_Active {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+.En_Active #En {
+  color: white;
+}
+
+.Vi_Active::before {
+  left: 0;
+  right: 50%;
 }
 
 .Vi_Active #Vi {
-  background: white;
-  color: #353535;
+  color: white;
 }
 
 .DropDown {
   width: 100%;
-  height: auto;
-  background: rgba(0, 0, 0, 0.75);
+  height: 100%;
+  background: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -133,12 +170,15 @@ iframe::-webkit-scrollbar {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .DropDown button {
@@ -146,7 +186,6 @@ iframe::-webkit-scrollbar {
   width: 50%;
   display: block;
   background: none;
-  color: white;
   font-size: 1.2rem;
   outline: none;
   border: none;
@@ -155,7 +194,6 @@ iframe::-webkit-scrollbar {
 }
 
 .DropDown button:hover {
-  background: #ffffff56;
   cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
